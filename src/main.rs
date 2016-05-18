@@ -2,14 +2,14 @@ use std::thread;
 use std::sync::{Mutex, Arc};
 use std::time::Duration;
 
-struct Philosopher {
-    name: String,
-    left: usize,
-    right: usize,
+pub struct Philosopher {
+    pub name: String,
+    pub left: usize,
+    pub right: usize,
 }
 
 impl Philosopher {
-    fn new(name: &str, left: usize, right: usize) -> Philosopher {
+    pub fn new(name: &str, left: usize, right: usize) -> Philosopher {
         return Philosopher{
             name: name.to_string(),
             left: left,
@@ -66,5 +66,4 @@ fn main() {
     for h in handles {
         h.join().unwrap();
     }
-
 }
